@@ -1,0 +1,113 @@
+$color-primary: #05c46b;
+$color-black: #000;
+$color-white: #fff;
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Lato";
+  color: #333;
+}
+
+.pricing-section {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1f1f1;
+  padding: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pricing {
+  font-size: 1.6rem;
+  background-color: $color-white;
+  width: 27rem;
+  max-width: 27rem;
+  box-shadow: 0px 1rem 5rem rgba(#000, 0.15);
+  border-radius: 4px;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-2rem);
+    cursor: pointer;
+    box-shadow: 0px 2rem 10rem rgba(#000, 0.3);
+  }
+
+  & > div:not(:last-child) {
+    border-bottom: 1px solid lighten(#000, 93%);
+  }
+
+  &.active > div {
+    border-bottom: 1px solid transparent;
+  }
+
+  &.active {
+    background-color: $color-primary;
+    color: #fff;
+  }
+  &.active &__cta {
+    background-color: #fff;
+    color: $color-primary;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    font-weight: 900;
+    font-size: 5rem;
+  }
+
+  &__subheading {
+    font-size: 2rem;
+  }
+  &__items {
+    list-style-type: none;
+    line-height: 3rem;
+  }
+
+  &__cta {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    padding: 1rem 6rem;
+    border-radius: 2px;
+    transition: all 0.4s;
+
+    &:hover {
+      background-color: $color-primary;
+      color: #fff;
+    }
+  }
+}
+
+// UTILITIES CLASSES
+.padding-tb-1 {
+  padding: 2rem 0;
+}
+
+.padding-tb-2 {
+  padding: 4rem 0;
+}
+.padding-left-small {
+  padding-left: 3rem;
+}
+
+.center {
+  text-align: center;
+}
